@@ -12,16 +12,16 @@ class Template(object):
     def __init__(self,args):
         super(Template,self).__init__()
         self.args = args
-        self.pub = rospy.Publisher("/goosebot/arm",Point, queue_size=10)
+        self.pub = rospy.Publisher("/goosebot/arm",Point, queue_size=10) #creamos el publisher
         
 
-    def publicar(self,x,y,z):
+    def publicar(self,x,y,z): #funcion donde podemos publicar un punto en el espacio
 
         p = Point()
         p.x = x
         p.y = y
         p.z = z
-        self.pub.publish(p)
+        self.pub.publish(p) #se publica el punto creado en el nodo
 
 
 def main():
